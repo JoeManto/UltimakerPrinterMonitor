@@ -6,11 +6,16 @@
 
 ### Monitor and track printing statistics on your Ultimaker 3Dprinters
 
+## Dependencies
+- RStudio
+
 ## The Tracking
 This program will create directories and csv files when a print is completed.
 New directories are created when a print is completed on a new month
 and a new csv file is created when a print is completed on a new day of that month.
-The data that is included in the csv files consists of print's total time taken, UID, print name ..etc 
+The data that is included in the csv files consists of print's total time taken, UID, print name ..etc
+
+At the end of the month/year/day R scripts will be ran to create plots or graphs on the the data that was collected.
 
 ## Adding Printers
 Adding printers is super simple just make sure your printers are connected to a lan or wifi connection to your local network.
