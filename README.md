@@ -2,6 +2,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](http://forthebadge.com)
 [![wercker status](https://app.wercker.com/status/9e0bc54c43f48d220aec684fffb2b110/s/master "wercker status")](https://app.wercker.com/project/bykey/9e0bc54c43f48d220aec684fffb2b110)
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
 ### Monitor and track printing statistics on your Ultimaker 3Dprinters
 
