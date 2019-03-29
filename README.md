@@ -1,2 +1,1 @@
-# UltimakerPrinterMonitor
-Monitor and track statics on your Ultimaker printers
+<img height = "200" src = "https://github.com/JoeManto/UltimakerPrinterMonitor/blob/master/res/3dpringingimage.png"/>
