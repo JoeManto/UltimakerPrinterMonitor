@@ -60,14 +60,14 @@ public class UltimakerPrint_Job {
             long timeleft = (status.getTotalTime() - status.getElapsedTime());
             hours = timeleft / 3600;
             mins = timeleft / 60 - (hours * 60);
-            return String.format("h%d, m%d", hours, mins);
+            return String.format("%dh, %dm", hours, mins);
         }
         return "------";
     }
 
     @Override
     public String toString() {
-        return String.format("%s [%6s] [%11s] %s", getProgString(), getTimeLeftString(), DEFINE_PRINTERS_.getStateName(state), status.getName());
+        return String.format("%s [%8s] [%16s] %s", getProgString(), getTimeLeftString(), DEFINE_PRINTERS_.getStateName(state), status.getName());
     }
 
 }

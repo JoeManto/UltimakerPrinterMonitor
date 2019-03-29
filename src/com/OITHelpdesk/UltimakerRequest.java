@@ -14,12 +14,16 @@ public class UltimakerRequest {
     }
 
     public HashMap<String, String> generateUpdateRequest(String printerIP) {
-        Scanner s = null;
+        Scanner s;
         try {
             URL url = new URL("http://" + printerIP + "/api/v1/print_job");
             s = new Scanner(url.openStream());
         } catch (IOException e) {
-            System.out.println("Could'nt fetch from printer ip");
+            //System.out.printf("Could'nt fetch from printer ip:%s",printerIP);
+            HashMap<String,String> temp = new HashMap<>();
+            temp.put("state:","Nothing Printing");
+            temp.put("name:"," ");
+            return temp;
         }
         return processRequest(s);
 
