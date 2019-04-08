@@ -22,7 +22,6 @@ public class UltimakerPrinter {
         this.job = new UltimakerPrint_Job(id);
         this.stats = new UltimakeStat(this.printerID);
         d = updateDate();
-        requestJobUpdate();
     }
 
     public void requestJobUpdate() {
@@ -34,13 +33,15 @@ public class UltimakerPrinter {
         if (job.isComplete()) {
             usageTime += job.getStatus().getTotalTime();
             printsCompleted++;
-            stats.createRecordForPrintCompletion(job.getStatus());
+            stats.createRecordForPrintCompletion(job.getStatus(),d);
             this.job = new UltimakerPrint_Job(printerID);
         }
-        if (d.getDayOfMonth() != updateDate().getDayOfMonth()) {
-            stats.appendDayStats(this);
+
+        LocalDate newDate = updateDate();
+        if (d.getDayOfMonth() != newDate.getDayOfMonth()) {
+            stats.appendDayStats(this,d);
         }
-        d = updateDate();
+        d = newDate;
     }
 
     public UltimakerPrint_Job getJob() {

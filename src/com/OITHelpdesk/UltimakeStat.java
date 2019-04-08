@@ -1,21 +1,17 @@
 package com.OITHelpdesk;
 
 import java.io.*;
-import java.util.Date;
 import java.time.*;
 
 public class UltimakeStat {
 
-    private LocalDate d;
     private int printerID;
 
     public UltimakeStat(int printerID) {
         this.printerID = printerID;
-        Date date = new Date();
-        d = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
 
-    public void createRecordForPrintCompletion(UltimakerRequest values) {
+    public void createRecordForPrintCompletion(UltimakerRequest values, LocalDate d) {
         try {
             String dirName = String.format("%s_%s", d.getMonth(), d.getYear());
             File dir = new File(dirName);
@@ -40,7 +36,7 @@ public class UltimakeStat {
         }
     }
 
-    public void appendDayStats(UltimakerPrinter p) {
+    public void appendDayStats(UltimakerPrinter p, LocalDate d) {
         try {
             String fileName = String.format("%s_%s/%s.csv", d.getMonth(), d.getYear(), d.getDayOfMonth());
             File f = new File(fileName);
